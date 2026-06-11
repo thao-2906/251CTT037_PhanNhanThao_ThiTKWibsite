@@ -3,121 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hệ thống Quản lý Nghiên cứu Khoa học Sinh viên</title>
-  <link rel="stylesheet" href="style.css"> 
+    <title>LEARNHUB</title>
+    <link rel="stylesheet" href="home.css">
 </head>
 <body>
 
-    <header class="app-header">
-        <div class="brand">
-            <img src="images/logo.png" alt="Logo Hệ thống" class="app-logo">
-            <h1>SRMS - Sci-Research 2026</h1>
+    <header class="header">
+        <div class="logo-area">
+            <h1>LearnHub</h1>
+            <p>Nền tảng học tập trực tuyến</p>
         </div>
-        <nav class="header-nav">
-            <ul class="header-menu">
-                <li><a href="#home" class="active">Trang chủ</a></li>
-                <li><a href="#about">Giới thiệu</a></li>
-                <li><a href="#news">Tin tức</a></li>
-                <li><a href="#contact">Liên hệ</a></li>
-            </ul>
-        </nav>
-        <div class="account-box">
-            <img src="images/user-avatar.png" alt="Sinh viên" class="user-photo">
-            <div class="account-details">
-                <span class="name">Phan Nhân Thảo</span>
-                <span class="id-number">MSSV: 251CTT037</span>
-            </div>
+        <div class="student-info">
+            <span class="student-name">Phan Nhân Thảo</span>
+            <span class="student-id">MSSV: 251CTT037</span>
         </div>
     </header>
 
     <div class="main-container">
-        <nav class="navigation-bar">
-            <ul class="nav-links">
-                <li class="nav-item active" onclick="navigateMenu(this, 'Bảng điều khiển')">📊 Bảng điều khiển</li>
-                <li class="nav-item" onclick="navigateMenu(this, 'Đề tài của tôi')">📁 Đề tài của tôi</li>
-                <li class="nav-item" onclick="navigateMenu(this, 'Quỹ nghiên cứu')">💰 Quỹ nghiên cứu</li>
-                <li class="nav-item" onclick="navigateMenu(this, 'Hội đồng khoa học')">👥 Hội đồng thẩm định</li>
+        <aside class="sidebar">
+            <ul>
+                <li><a href="#" class="side-item active">Dashboard</a></li>
+                <li><a href="#" class="side-item">Môn học</a></li>
+                <li><a href="#" class="side-item">Bài tập</a></li>
+                <li><a href="#" class="side-item">Kết quả học tập</a></li>
+                <li><a href="#" class="side-item">Tài khoản</a></li>
             </ul>
+        </aside>
+
+        <div class="content-wrapper">
             
-            <div class="current-state">
-                <h5>Phân hệ đang chạy</h5>
-                <p>Đang xem: <strong id="selected-tab">Bảng điều khiển</strong></p>
+            <div class="left-content">
+                <section class="banner">
+                    <h3>Xin chào, Phan Nhân Thảo!</h3>
+                    <p>Hôm nay là ngày học tập tuyệt vời</p>
+                </section>
+
+                <section class="activity-section">
+                    <h3 class="section-title">Danh sách môn học</h3>
+                    
+                    <div class="courses-grid" id="coursesGrid">
+                        
+                        <article class="card">
+                            <div class="card-img">
+                                <img src="images/images.jpg" alt="HTML/CSS">
+                            </div>
+                            <h4 class="card-title">HTML/CSS</h4>
+                            <p class="progress-text">Tiến độ: 90%</p>
+                            <button class="btn" data-name="HTML/CSS" data-progress="90%">Xem</button>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-img">
+                                <img src="images/javascript-2.jpeg" alt="JAVA">
+                            </div>
+                            <h4 class="card-title">JAVA</h4>
+                            <p class="progress-text">Tiến độ: 80%</p>
+                            <button class="btn" data-name="JAVA" data-progress="80%">Xem</button>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-img">
+                                <img src="images/php-la-gi-1630265268116752752599.webp" alt="PHP">
+                            </div>
+                            <h4 class="card-title">PHP</h4>
+                            <p class="progress-text">Tiến độ: 75%</p>
+                            <button class="btn" data-name="PHP" data-progress="75%">Xem</button>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-img">
+                                <img src="images/mysql-1-1600340047538868003500-crop-160034079526453914971.webp" alt="MySQL">
+                            </div>
+                            <h4 class="card-title">MySQL</h4>
+                            <p class="progress-text">Tiến độ: 85%</p>
+                            <button class="btn" data-name="MySQL" data-progress="85%">Xem</button>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-img">
+                                <img src="images/file-1723784092933_1723784157953.jpg" alt="Laravel">
+                            </div>
+                            <h4 class="card-title">Laravel</h4>
+                            <p class="progress-text">Tiến độ: 60%</p>
+                            <button class="btn" data-name="Laravel" data-progress="60%">Xem</button>
+                        </article>
+
+                        <article class="card">
+                            <div class="card-img">
+                                <img src="images/ai-la-gi-cong-dung-cua-ai.jpg" alt="AI cơ bản">
+                            </div>
+                            <h4 class="card-title">AI cơ bản</h4>
+                            <p class="progress-text">Tiến độ: 70%</p>
+                            <button class="btn" data-name="AI cơ bản" data-progress="70%">Xem</button>
+                        </article>
+
+                    </div>
+                </section>
+
+                <section class="statistics-section">
+                    <div class="stat-box">
+                        <p>Số môn học</p>
+                        <h4>6 Môn</h4>
+                    </div>
+                    <div class="stat-box">
+                        <p>Số bài tập</p>
+                        <h4>24 Bài</h4>
+                    </div>
+                    <div class="stat-box">
+                        <p>Điểm trung bình</p>
+                        <h4>8.2 /10</h4>
+                    </div>
+                    <div class="stat-box">
+                        <p>Tín chỉ tích lũy</p>
+                        <h4>18 Tín chỉ</h4>
+                    </div>
+                </section>
             </div>
-        </nav>
 
-        <main class="content-body">
-            <section class="info-banner">
-                <h2>Xin chào Nhà nghiên cứu trẻ! 🚀</h2>
-                <p>Hệ thống hỗ trợ theo dõi tiến độ, nộp thuyết minh đề tài và cập nhật kinh phí nghiên cứu năm học 2026.</p>
-            </section>
-
-            <section class="section-heading">
-                <h3>Danh mục Đề tài Nghiên cứu Nổi bật</h3>
-            </section>
-
-            <div class="grid-layout" id="research-grid">
-                
-                <article class="project-card">
-                    <img src="images/project1.jpg" alt="AI và Y tế" class="project-thumb">
-                    <div class="project-info">
-                        <h4>Ứng dụng AI chẩn đoán bệnh</h4>
-                        <p class="project-summary">Xây dựng mô hình học sâu hỗ trợ bác sĩ phân tích hình ảnh X-quang chuẩn xác.</p>
-                        <p class="project-status">Kinh phí cấp: <span class="highlight">15.000.000đ</span></p>
-                        <button class="action-btn" onclick="displayProject('Ứng dụng AI chẩn đoán bệnh', '15.000.000đ')">Xem chi tiết</button>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <img src="images/project2.jpg" alt="Năng lượng xanh" class="project-thumb">
-                    <div class="project-info">
-                        <h4>Hệ thống Pin Năng lượng Mặt trời</h4>
-                        <p class="project-summary">Tối ưu hóa hiệu suất hấp thụ bức xạ nhiệt bằng thuật toán theo dõi điểm công suất tối đa.</p>
-                        <p class="project-status">Tiến độ hoàn thành: <span class="highlight">75%</span></p>
-                        <button class="action-btn" onclick="displayProject('Hệ thống Pin Năng lượng Mặt trời', '75%')">Xem chi tiết</button>
-                    </div>
-                </article>
-
-                <article class="project-card">
-                    <img src="images/project3.jpg" alt="Iot Nông nghiệp" class="project-thumb">
-                    <div class="project-info">
-                        <h4>IoT trong Nông nghiệp thông minh</h4>
-                        <p class="project-summary">Giám sát tự động độ ẩm đất, nhiệt độ không khí và tự động hóa hệ thống tưới tiêu qua di động.</p>
-                        <p class="project-status">Tiến độ hoàn thành: <span class="highlight">40%</span></p>
-                        <button class="action-btn" onclick="displayProject('IoT trong Nông nghiệp thông minh', '40%')">Xem chi tiết</button>
-                    </div>
-                </article>
-
-            </div>
-
-            <section class="interactive-panel">
-                <div class="panel-box border-blue" id="detail-panel">
-                    <h4>🔍 ĐỀ TÀI ĐANG CHỌN XEM</h4>
-                    <p><strong>Tên đề tài:</strong> <span id="project-title">Chưa có dữ liệu</span></p>
-                    <p><strong>Thông số/Kinh phí:</strong> <span id="project-value">Chưa có dữ liệu</span></p>
+            <div class="right-sidebar">
+                <div class="selected-box">
+                    <h3>MÔN HỌC ĐANG CHỌN</h3>
+                    <p>Tên môn học: <span id="selectedName">Chưa chọn</span></p>
+                    <p>Tiến độ: <span id="selectedProgress">--</span></p>
                 </div>
 
-                <div class="panel-box border-orange">
-                    <h4>🔑 Khóa Thẩm Định Tự Động</h4>
-                    <p>Mã phiên làm việc: <span class="session-token" id="session-code">00</span></p>
-                    <small>(Hệ thống tự động cộng 3 số cuối của MSSV)</small>
+                <div class="notify-box">
+                    <h3>Thông báo</h3>
+                    <p>• Bài tập tuần 5 đã cập nhật.</p>
+                    <p>• Hạn nộp bài PHP: 30/05/2026.</p>
                 </div>
-            </section>
-        </main>
+            </div>
+
+        </div>
     </div>
 
-    <footer class="app-footer">
-        <p>Sinh viên thực hiện: Phan Nhân Thảo | Mã số sinh viên: 251CTT037</p>
-        <div class="footer-item">
-        <span class="icon">✉️</span>
-        <span>Email: <a href="mailto:251CTT037_thao@pyu.edu.vn">251CTT037_thao@pyu.edu.vn</a></span>
-    </div>
-    <div class="footer-item">
-        <span class="icon">📞</span>
-        <span>Hotline: <a href="tel:0364291758">0364291758</a></span>
-    </div>
-        <p>Hệ thống ghi nhận thời gian vào lúc: <span id="clock">Đang đồng bộ...</span></p>
+    <footer class="footer">
+        <p>MSSV: 251CTT037</p>
+        <p>Họ tên: Phan Nhân Thảo</p>
+        <p>Ngày thi: 23/05/2026</p>
     </footer>
 
-   <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

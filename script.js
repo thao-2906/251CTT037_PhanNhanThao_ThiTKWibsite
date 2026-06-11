@@ -1,50 +1,54 @@
 
-const CHUOI_MSSV = "251CTT037"; 
+document.addEventListener("DOMContentLoaded", function () {
 
-window.onload = function() {
+    const buttons = document.querySelectorAll(".card .btn");
+    const selectedName = document.getElementById("selectedName");
+    const selectedProgress = document.getElementById("selectedProgress");
 
-    const soCuoi = parseInt(CHUOI_MSSV.slice(-1)); 
-    const vungKhongGianGrid = document.getElementById('research-grid');
+    buttons.forEach(button => {
+        button.addEventListener("click", function () {
     
-    if (soCuoi % 2 === 0) {
+            const courseName = this.getAttribute("data-name");
+            const courseProgress = this.getAttribute("data-progress");
+            if (selectedName && selectedProgress) {
+                selectedName.textContent = courseName;
+                selectedProgress.textContent = courseProgress;
+            }
+        });
+    });
+
+ 
+    const sidebarItems = document.querySelectorAll(".sidebar .side-item");
+
+    sidebarItems.forEach(item => {
+        item.addEventListener("click", function (e) {
+         
+            e.preventDefault(); 
+
+           
+            sidebarItems.forEach(i => i.classList.remove("active"));
+
+          
+            this.classList.add("active");
+        });
+    });
+
+    const mssv = "251CTT037"; 
     
-        vungKhongGianGrid.classList.add('cols-3');
-        console.log("Số cuối MSSV chẵn (" + soCuoi + ") -> Layout 3 cột.");
-    } else {
-        
-        vungKhongGianGrid.classList.add('cols-2');
-        console.log("Số cuối MSSV lẻ (" + soCuoi + ") -> Layout 2 cột.");
+   
+    const lastTwoDigits = parseInt(mssv.slice(-2)); 
+    
+    const coursesGrid = document.getElementById("coursesGrid");
+
+    if (coursesGrid) {
+        if (lastTwoDigits % 2 === 0) {
+          
+            coursesGrid.classList.remove("grid-2-cols");
+            console.log(`Số cuối ${lastTwoDigits} là CHẴN: Hiển thị Grid 3 cột`);
+        } else {
+
+            coursesGrid.classList.add("grid-2-cols");
+            console.log(`Số cuối ${lastTwoDigits} là LẺ: Tự động đổi sang Grid 2 cột`);
+        }
     }
-
-    
-    const baSoCuoi = CHUOI_MSSV.slice(-3).split(''); 
-    const tongDiem = baSoCuoi.reduce((accum, val) => accum + parseInt(val), 0);
-    document.getElementById('session-code').innerText = tongDiem;
-
-    capNhatThoiGian();
-    setInterval(capNhatThoiGian, 1000);
-};
-
-function displayProject(tenDeTai, thongSo) {
-    // Đổ dữ liệu trực tiếp vào DOM thay vì dùng alert()
-    document.getElementById('project-title').innerText = tenDeTai;
-    document.getElementById('project-value').innerText = thongSo;
-    
-    // Đồng bộ trạng thái lên hộp thông báo hệ thống ở Sidebar
-    document.getElementById('selected-tab').innerText = "Xem: " + tenDeTai;
-}
-
-function navigateMenu(theLiDuocClick, tenPhanHe) {
-    
-    const danhSachItem = document.querySelectorAll('.nav-item');
-    danhSachItem.forEach(item => item.classList.remove('active'));
-    
-    theLiDuocClick.classList.add('active');
-    
-    document.getElementById('selected-tab').innerText = tenPhanHe;
-}
-
-function capNhatThoiGian() {
-    const bayGio = new Date();
-    document.getElementById('clock').innerText = bayGio.toLocaleDateString('vi-VN') + " lúc " + bayGio.toLocaleTimeString('vi-VN');
-}
+});
